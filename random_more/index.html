@@ -1,0 +1,138 @@
+<!doctype html>
+
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+
+  <title>Generator liczb losowych</title>
+
+  <link href="static/bootstrap.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="static/odometer-theme-car.css" />
+
+  <script src="static/jquery.min.js"></script>
+
+  <script src="static/bootstrap.min.js"></script>
+
+  <script src="static/odometer.pad.js"></script>
+
+  <!-- DOCS -->
+  <!-- https://github.hubspot.com/odometer/api/themes/ -->
+  <!-- https://codeless.co/support/?topic=how-do-i-remove-commas-on-counter -->
+  <!-- https://github.com/wqzwh/odometer -->
+
+  <style>
+    .srodek {
+      position: absolute;
+      top: 50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div class="container" style="padding-top: 3%;">
+  <div class="form-inline row justify-content-md-center">
+    <label for="od" class="mr-sm-2">Od:</label>
+    <input type="number" class="form-control mb-2 mr-sm-2" id="od" min="1" max="500" style="width: 150px;">
+    <label for="do" class="mr-sm-2">Do:</label>
+    <input type="number" class="form-control mb-2 mr-sm-2" id="do" min="1" max="500"  style="width: 150px;">
+
+    <button type="button" class="btn btn-success mb-2" style="width: 200px;" onclick="random()">Losuj</button>
+  </div>
+  <br />
+  <div class="row">
+      <div class="col-3">
+        <div id="odometer1" class="odometer" style="font-size: 70px;"></div>
+      </div>
+      <div class="col-3">
+        <div id="odometer2" class="odometer" style="font-size: 70px;"></div>
+      </div>
+      <div class="col-3">
+        <div id="odometer3" class="odometer" style="font-size: 70px;"></div>
+      </div>
+      <div class="col-3">
+        <div id="odometer4" class="odometer" style="font-size: 70px;"></div>
+      </div>
+  </div>
+  <br />
+  <div class="row">
+      <div class="col-3">
+        <div id="odometer5" class="odometer" style="font-size: 70px;"></div>
+      </div>
+      <div class="col-3">
+        <div id="odometer6" class="odometer" style="font-size: 70px;"></div>
+      </div>
+      <div class="col-3">
+        <div id="odometer7" class="odometer" style="font-size: 70px;"></div>
+      </div>
+      <div class="col-3">
+        <div id="odometer8" class="odometer" style="font-size: 70px;"></div>
+      </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  window.odometerOptions = {
+    format: 'dd',
+    numberLength: 2,
+    duration: 5000, // change it in theme-car.css
+    zeroFlag: true
+  };
+  Odometer.init(odometerOptions);
+</script>
+
+<script>
+function generateRan(min, max, count){
+  var random = [];
+  if ((max-min+1) < count) {
+    alert("Zbyt mały zakres");
+    return random;
+  }
+  
+  for(var i = 0;i<count ; i++){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    var temp = Math.floor(Math.random() * (max - min + 1)) + min;
+    if(random.indexOf(temp) == -1){
+        random.push(temp);
+    }
+    else
+     i--;
+  }
+  return random;
+}
+
+
+function random(){
+    var min = document.getElementById("od").value;
+    var max = document.getElementById("do").value;
+    console.log("min:", min, "max:", max);
+    random_array = generateRan(min, max, 8);
+    console.log("rand1:", random_array[0]);
+    console.log("rand2:", random_array[1]);
+    console.log("rand3:", random_array[2]);
+    console.log("rand4:", random_array[3]);
+    console.log("rand5:", random_array[4]);
+    console.log("rand6:", random_array[5]);
+    console.log("rand7:", random_array[6]);
+    console.log("rand8:", random_array[7]);
+    document.getElementById('odometer1').innerHTML = random_array[0];
+    document.getElementById('odometer2').innerHTML = random_array[1];
+    document.getElementById('odometer3').innerHTML = random_array[2];
+    document.getElementById('odometer4').innerHTML = random_array[3];
+    document.getElementById('odometer5').innerHTML = random_array[4];
+    document.getElementById('odometer6').innerHTML = random_array[5];
+    document.getElementById('odometer7').innerHTML = random_array[6];
+    document.getElementById('odometer8').innerHTML = random_array[7];
+}
+</script>
+  
+</body>
+
+
+</html>

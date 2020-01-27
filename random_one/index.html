@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+
+  <title>Generator liczb losowych</title>
+
+  <link href="static/bootstrap.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="static/odometer-theme-car.css" />
+
+  <script src="static/jquery.min.js"></script>
+
+  <script src="static/bootstrap.min.js"></script>
+
+  <script src="static/odometer.min.js"></script>
+
+  <!-- DOCS -->
+  <!-- https://github.hubspot.com/odometer/api/themes/ -->
+  <!-- https://codeless.co/support/?topic=how-do-i-remove-commas-on-counter -->
+
+  <style>
+    .srodek {
+      position: absolute;
+      top: 50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="srodek">
+        <div class="row">
+            <div id="odometer" class="odometer" style="font-size: 150px;"></div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="row">
+            <div class="form-group" style="width: 100%">
+              <label for="od">Od:</label>
+              <input type="number" class="form-control" id="od" min="1" max="500">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group" style="width: 100%">
+              <label for="do">Do:</label>
+              <input type="number" class="form-control" id="do" min="1" max="500">
+            </div>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-success btn-lg btn-block" onclick="random()">Losuj</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+function random(){
+    var min = document.getElementById("od").value;
+    var max = document.getElementById("do").value;
+    var rand = Math.floor(Math.random() * (+max - +min)) + +min;
+    console.log("<", min, ",", max, "> -->", rand);
+    document.getElementById('odometer').innerHTML = rand;
+}
+</script>
+  
+</body>
+
+
+</html>
