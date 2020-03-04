@@ -28,6 +28,9 @@
       left:50%;
       transform: translate(-50%,-50%);
     }
+    .odometer_margin {
+      margin: 2%;
+    }
   </style>
 
 </head>
@@ -45,32 +48,50 @@
   </div>
   <br />
   <div class="row">
-      <div class="col-3">
-        <div id="odometer1" class="odometer" style="font-size: 70px;"></div>
+      <div class="col-2">
+        <div id="odometer1" class="odometer odometer_margin" style="font-size: 70px;"></div>
       </div>
-      <div class="col-3">
-        <div id="odometer2" class="odometer" style="font-size: 70px;"></div>
+      <div class="col-2">
+        <div id="odometer2" class="odometer odometer_margin" style="font-size: 70px;"></div>
       </div>
-      <div class="col-3">
-        <div id="odometer3" class="odometer" style="font-size: 70px;"></div>
+      <div class="col-2">
+        <div id="odometer3" class="odometer odometer_margin" style="font-size: 70px;"></div>
       </div>
-      <div class="col-3">
-        <div id="odometer4" class="odometer" style="font-size: 70px;"></div>
+      <div class="col-2">
+        <div id="odometer4" class="odometer odometer_margin" style="font-size: 70px;"></div>
       </div>
-  </div>
-  <br />
-  <div class="row">
-      <div class="col-3">
-        <div id="odometer5" class="odometer" style="font-size: 70px;"></div>
+      <div class="col-2">
+        <div id="odometer5" class="odometer odometer_margin" style="font-size: 70px;"></div>
       </div>
-      <div class="col-3">
-        <div id="odometer6" class="odometer" style="font-size: 70px;"></div>
+      <div class="col-2">
+        <div id="odometer6" class="odometer odometer_margin" style="font-size: 70px;"></div>
       </div>
-      <div class="col-3">
-        <div id="odometer7" class="odometer" style="font-size: 70px;"></div>
+      <div class="col-2">
+        <div id="odometer7" class="odometer odometer_margin" style="font-size: 70px;"></div>
       </div>
-      <div class="col-3">
-        <div id="odometer8" class="odometer" style="font-size: 70px;"></div>
+      <div class="col-2">
+        <div id="odometer8" class="odometer odometer_margin" style="font-size: 70px;"></div>
+      </div>
+      <div class="col-2">
+        <div id="odometer9" class="odometer odometer_margin" style="font-size: 70px;"></div>
+      </div>
+      <div class="col-2">
+        <div id="odometer10" class="odometer odometer_margin" style="font-size: 70px;"></div>
+      </div>
+      <div class="col-2">
+        <div id="odometer11" class="odometer odometer_margin" style="font-size: 70px;"></div>
+      </div>
+      <div class="col-2">
+        <div id="odometer12" class="odometer odometer_margin" style="font-size: 70px;"></div>
+      </div>
+      <div class="col-2">
+        <div id="odometer13" class="odometer odometer_margin" style="font-size: 70px;"></div>
+      </div>
+      <div class="col-2">
+        <div id="odometer14" class="odometer odometer_margin" style="font-size: 70px;"></div>
+      </div>
+      <div class="col-2">
+        <div id="odometer15" class="odometer odometer_margin" style="font-size: 70px;"></div>
       </div>
   </div>
 </div>
@@ -112,7 +133,7 @@ function random(){
     var min = document.getElementById("od").value;
     var max = document.getElementById("do").value;
     console.log("min:", min, "max:", max);
-    random_array = generateRan(min, max, 8);
+    random_array = generateRan(min, max, 15);
     console.log("rand1:", random_array[0]);
     console.log("rand2:", random_array[1]);
     console.log("rand3:", random_array[2]);
@@ -121,6 +142,13 @@ function random(){
     console.log("rand6:", random_array[5]);
     console.log("rand7:", random_array[6]);
     console.log("rand8:", random_array[7]);
+    console.log("rand9:", random_array[8]);
+    console.log("rand10:", random_array[9]);
+    console.log("rand11:", random_array[10]);
+    console.log("rand12:", random_array[11]);
+    console.log("rand13:", random_array[12]);
+    console.log("rand14:", random_array[13]);
+    console.log("rand15:", random_array[14]);
     document.getElementById('odometer1').innerHTML = random_array[0];
     document.getElementById('odometer2').innerHTML = random_array[1];
     document.getElementById('odometer3').innerHTML = random_array[2];
@@ -129,6 +157,13 @@ function random(){
     document.getElementById('odometer6').innerHTML = random_array[5];
     document.getElementById('odometer7').innerHTML = random_array[6];
     document.getElementById('odometer8').innerHTML = random_array[7];
+    document.getElementById('odometer9').innerHTML = random_array[8];
+    document.getElementById('odometer10').innerHTML = random_array[9];
+    document.getElementById('odometer11').innerHTML = random_array[10];
+    document.getElementById('odometer12').innerHTML = random_array[11];
+    document.getElementById('odometer13').innerHTML = random_array[12];
+    document.getElementById('odometer14').innerHTML = random_array[13];
+    document.getElementById('odometer15').innerHTML = random_array[14];
 }
 </script>
   
